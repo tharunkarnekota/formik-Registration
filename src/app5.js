@@ -1,3 +1,5 @@
+//just for my reference ,main file is app.js
+
 import React from 'react'
 import { useFormik } from 'formik'
 
@@ -7,11 +9,10 @@ const App = () => {
       name: '',
       email: '',
       password: '',
-      result: ''
     },
     onSubmit:(values)=>{
       console.log(values)
-    //axios.post('...url...',{values})         if you want to send data to another server
+    //axios.post('...url...',{values})         if you wanna send to another server
     },
     validate:(values)=>{
       let errors ={};
@@ -41,7 +42,7 @@ const App = () => {
         <form autoComplete="off" onSubmit={data.handleSubmit}>
           <br /><br />
 
-          <h1 style={{"color":"green"}}> Registration </h1><br />
+          <h1> Registration </h1><br />
 
           <label><b>Name</b></label><br/>
           <input type="text"    name="name"     id="name"    value={data.values.name}    onChange={data.handleChange}/><br />
@@ -56,8 +57,7 @@ const App = () => {
           {data.errors.password?<div style={{"color":"red"}}>{data.errors.password}</div>:null}
 
           <br />
-          <button type="submit" className="btn btn-secondary" onClick={e => data.values.result=1}>Register</button><br /><br />
-          {data.values.result=1 && data.values.name && data.values.email && data.values.password.length>3 ?<h3 style={{"color":"blue"}}>Register and console for result</h3>:null}
+          <button type="submit" className="btn btn-secondary">Register</button><br /><br />
         </form>
         </div>
       </center>
